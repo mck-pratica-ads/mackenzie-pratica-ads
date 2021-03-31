@@ -3,6 +3,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
+import Welcome from "./components/welcome.component";
 import Login from "./components/login.component";
 import SignUp from "./components/signup.component";
 import Home from "./components/home.component";
@@ -12,7 +13,7 @@ function App() {
     <div className="App">
       <nav className="navbar navbar-expand-lg navbar-light fixed-top">
         <div className="container">
-          <Link className="navbar-brand" to={"/sign-in"}>positronX.io</Link>
+          <Link className="navbar-brand" to={"/sign-in"}>RecommendApp</Link>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
@@ -29,7 +30,7 @@ function App() {
       <div className="auth-wrapper">
         <div className="auth-inner">
           <Switch>
-            <Route exact path='/' component={Login} />
+            <Route exact path='/' component={Welcome} />
             <Route path="/sign-in" component={Login} />
             <Route path="/sign-up" component={SignUp} />
             <Route path="/home" component={Home} />

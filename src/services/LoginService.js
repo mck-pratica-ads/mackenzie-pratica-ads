@@ -6,7 +6,6 @@ const USER_API_BASE_URL = 'http://localhost:8080/login';
 class ApiService {
 
     loginUser(user) {
-
         const headers = {
             'Content-Type': 'application/json'
         };
@@ -19,24 +18,22 @@ class ApiService {
         {headers});
     }
 
-    fetchUsers() {
-        return axios.get(USER_API_BASE_URL);
-    }
+    signUpUser(form) {
+        const headers = {
+            'Content-Type': 'application/json'
+        };
 
-    fetchUserById(userId) {
-        return axios.get(USER_API_BASE_URL + '/' + userId);
-    }
-
-    deleteUser(userId) {
-        return axios.delete(USER_API_BASE_URL + '/' + userId);
-    }
-
-    addUser(user) {
-        return axios.post(""+USER_API_BASE_URL, user);
-    }
-
-    editUser(user) {
-        return axios.put(USER_API_BASE_URL + '/' + user.id, user);
+        return axios.post(USER_API_BASE_URL + '/' + 'signup',
+        {
+            email: form.email,
+            password: form.password,            
+            fullname: form.fullname,
+            username: form.username,
+            birthdate: form.birthdate,
+            state: form.state,
+            city: form.city,
+        },
+        {headers});
     }
 
 }

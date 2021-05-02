@@ -42,6 +42,8 @@ export default class SignUp extends Component {
     render() {
         const {email, password, fullname, username, birthdate, state, city, hasError, isLoading} = this.state;
         return (
+            <div className="auth-wrapper">
+                <div className="auth-inner">
             <form onSubmit={this.submitSignUp}>
                 {hasError ? 
                 (<Alert key={'danger'} variant={'danger'}>
@@ -97,6 +99,8 @@ export default class SignUp extends Component {
 
                 </div>)}
             </form>
+            </div>
+            </div>
         );
     }
 }

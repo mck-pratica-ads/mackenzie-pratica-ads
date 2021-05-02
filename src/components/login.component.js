@@ -39,53 +39,57 @@ export default class Login extends Component {
         const { username, password, isLoading, hasError } = this.state;
 
         return (
-            <form onSubmit={this.submitLogin}>
-                {hasError ? 
-                (<Alert key={'danger'} variant={'danger'}>
-                    Não foi possível fazer seu login. Por favor, verifique seu username e senha.
-                    </Alert>) : (<div></div>)}
-                <h3>Login</h3>
+            <div className="auth-wrapper">
+                <div className="auth-inner">
+                <form onSubmit={this.submitLogin}>
+                    {hasError ? 
+                    (<Alert key={'danger'} variant={'danger'}>
+                        Não foi possível fazer seu login. Por favor, verifique seu username e senha.
+                        </Alert>) : (<div></div>)}
+                    <h3>Login</h3>
 
-                {isLoading ? (
-                    <div className="d-flex justify-content-center">
-                        <Spinner animation="border" />                        
+                    {isLoading ? (
+                        <div className="d-flex justify-content-center">
+                            <Spinner animation="border" />                        
+                        </div>
+                    ) : (<div>
+                    <div className="form-group">
+                        <label>Username</label>
+                        <input 
+                            type="username" 
+                            value={username} 
+                            className="form-control" 
+                            placeholder="Username" 
+                            onChange={(e) => {this.setState({username: e.target.value})}}
+                        />
                     </div>
-                ) : (<div>
-                <div className="form-group">
-                    <label>Username</label>
-                    <input 
-                        type="username" 
-                        value={username} 
-                        className="form-control" 
-                        placeholder="Username" 
-                        onChange={(e) => {this.setState({username: e.target.value})}}
-                    />
-                </div>
 
-                <div className="form-group">
-                    <label>Senha</label>
-                    <input 
-                        type="password" 
-                        value={password} 
-                        className="form-control" 
-                        placeholder="Password"
-                        onChange={(e) => {this.setState({password: e.target.value})}}
-                    />
-                </div>
-
-                <div className="form-group">
-                    <div className="custom-control custom-checkbox">
-                        <input type="checkbox" className="custom-control-input" id="customCheck1" />
-                        <label className="custom-control-label" htmlFor="customCheck1">Remember me</label>
+                    <div className="form-group">
+                        <label>Senha</label>
+                        <input 
+                            type="password" 
+                            value={password} 
+                            className="form-control" 
+                            placeholder="Password"
+                            onChange={(e) => {this.setState({password: e.target.value})}}
+                        />
                     </div>
-                </div>
 
-                <button type="submit" className="btn btn-primary btn-block">Entrar</button>
-                <p className="forgot-password text-right">
-                    Faça o cadastro <a href="/sign-up"> aqui </a>
-                </p>
-                </div>)}
-            </form>
+                    <div className="form-group">
+                        <div className="custom-control custom-checkbox">
+                            <input type="checkbox" className="custom-control-input" id="customCheck1" />
+                            <label className="custom-control-label" htmlFor="customCheck1">Remember me</label>
+                        </div>
+                    </div>
+
+                    <button type="submit" className="btn btn-primary btn-block">Entrar</button>
+                    <p className="forgot-password text-right">
+                        Faça o cadastro <a href="/sign-up"> aqui </a>
+                    </p>
+                    </div>)}
+                </form>
+            </div>
+            </div>
         );
     }
 }

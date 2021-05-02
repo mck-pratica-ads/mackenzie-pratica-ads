@@ -14,7 +14,7 @@ function App() {
       <nav className="navbar navbar-expand-lg navbar-light fixed-top">
         <div className="container">
           <Link className="navbar-brand" to={"/sign-in"}>AppVision</Link>
-          <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
+          {/* <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
                 <Link className="nav-link" to={"/sign-in"}>Login</Link>
@@ -23,20 +23,38 @@ function App() {
                 <Link className="nav-link" to={"/sign-up"}>Sign up</Link>
               </li>
             </ul>
-          </div>
+          </div> */}
         </div>
       </nav>
 
-      <div className="auth-wrapper">
-        <div className="auth-inner">
+      {/* <div> */}
+        {/* <div> */}
           <Switch>
             <Route exact path='/' component={Welcome} />
             <Route path="/sign-in" component={Login} />
             <Route path="/sign-up" component={SignUp} />
             <Route path="/home" component={Home} />
           </Switch>
+        {/* </div> */}
+      {/* </div> */}
+
+      <nav className="navbar navbar-expand-lg navbar-light fixed-bottom">
+        <div className="container">
+          <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul className="navbar-nav ">
+              <li className="nav-item">
+                <Link className="nav-link" to={"/home"}>Home</Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to={"/search"}>Buscar</Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to={"/perfil"}>Perfil</Link>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
+      </nav>
     </div></Router>
   );
 }

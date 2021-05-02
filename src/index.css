@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 body {
-  background: #1C8EF9 !important;
+  background: #5b9fdf !important;
   min-height: 100vh;
   display: flex;
   font-weight: 400;
@@ -41,6 +41,11 @@ body, html, .App, #root, .auth-wrapper {
   padding: 40px 55px 45px 55px;
   border-radius: 15px;
   transition: all .3s;
+}
+
+.top {
+  margin-top: 100px;
+  padding-bottom: 100px;
 }
 
 .auth-wrapper .form-control:focus {

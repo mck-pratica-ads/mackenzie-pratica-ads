@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { Image, Row } from 'react-bootstrap';
+import { Link } from "react-router-dom";
 
 export default class Item extends Component {
     render() {
         var { item } = this.props;
-        
         return (
-            <div className="m-3">                
+            <div className="m-3"> 
+                <Link to={"/item?id=".concat(item.id)}>
                 <h5> {item.name} </h5>
                 <Image src="movie_img.svg" rounded fluid />
                 <div>
@@ -15,6 +16,7 @@ export default class Item extends Component {
                 </svg> 
                 <h5> {item.rating} </h5>
                 </div>
+                </Link>               
             </div>
         );
     }

@@ -7,6 +7,7 @@ import Welcome from "./components/welcome.component";
 import Login from "./components/login.component";
 import SignUp from "./components/signup.component";
 import Home from "./components/home.component";
+import ItemDetails from './components/item_details.component';
 
 function App() {
   return (<Router>
@@ -14,16 +15,19 @@ function App() {
       <nav className="navbar navbar-expand-lg navbar-light fixed-top">
         <div className="container">
           <Link className="navbar-brand" to={"/sign-in"}>AppVision</Link>
-          {/* <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul className="navbar-nav ml-auto">
+          <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul className="navbar-nav">
               <li className="nav-item">
-                <Link className="nav-link" to={"/sign-in"}>Login</Link>
+                <Link className="nav-link" to={"/home"}>Home</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to={"/sign-up"}>Sign up</Link>
+                <Link className="nav-link" to={"/search"}>Buscar</Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to={"/perfil"}>Perfil</Link>
               </li>
             </ul>
-          </div> */}
+          </div>
         </div>
       </nav>
 
@@ -34,11 +38,12 @@ function App() {
             <Route path="/sign-in" component={Login} />
             <Route path="/sign-up" component={SignUp} />
             <Route path="/home" component={Home} />
+            <Route path="/item" component={ItemDetails} />
           </Switch>
         {/* </div> */}
       {/* </div> */}
 
-      <nav className="navbar navbar-expand-lg navbar-light fixed-bottom">
+      {/* <nav className="navbar navbar-expand-lg navbar-light fixed-bottom">
         <div className="container">
           <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul className="navbar-nav ">
@@ -54,7 +59,7 @@ function App() {
             </ul>
           </div>
         </div>
-      </nav>
+      </nav> */}
     </div></Router>
   );
 }

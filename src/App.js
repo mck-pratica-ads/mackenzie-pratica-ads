@@ -8,6 +8,7 @@ import Login from "./components/login.component";
 import SignUp from "./components/signup.component";
 import Home from "./components/home.component";
 import ItemDetails from './components/item_details.component';
+import Perfil from './components/perfil.component';
 
 function App() {
   return (<Router>
@@ -39,6 +40,7 @@ function App() {
             <Route path="/sign-up" component={SignUp} />
             <Route path="/home" component={Home} />
             <Route path="/item" component={ItemDetails} />
+            <Route path="/perfil" component={Perfil} />
           </Switch>
         {/* </div> */}
       {/* </div> */}

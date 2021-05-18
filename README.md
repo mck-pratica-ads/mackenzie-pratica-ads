@@ -22,8 +22,7 @@ Para visualizar o código do **Backend** [acesse aqui](https://github.com/mck-pr
 ## Tecnologias Utilizadas
 - Frontend: [React.js](https://reactjs.org/)
 - Backend: [Node.js + Express](https://expressjs.com/pt-br/)
-- Banco de dados: TBD
-- Sistema de Recomendação: TBD
+- Banco de dados: PostegreSQL
 - Deploy: Heroku
 
 ## FrontEnd
